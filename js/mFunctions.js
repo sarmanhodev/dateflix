@@ -1,17 +1,18 @@
 function enviarMensagemWhatsApp(data, horario, local) {
     const frasesFlaFluZoeiraRomanceLeve = [
-        `Flamengo e Fluminense já se enfrentaram mais de 400 vezes e ainda continuam se encontrando. Coincidência? Acho que não. Quarto date confirmado: *{local}*, *{data}* às *{horario}*. Tá virando clássico com continuidade.`,
-
-        `Se Fla e Flu conseguem conviver no mesmo estádio, quem diria a gente dividindo quatro rolês seguidos? Tá confirmado: *{local}*, *{data}* às *{horario}*. E sem nenhum cartão vermelho (ainda).`,
-
-        `Tem coisas que ninguém explica: Fla e Flu dando certo... e esse nosso 4º date também. Tá marcado: *{local}*, *{data}* às *{horario}*. Vai ver, o segredo é só manter o bom humor (e não atrasar).`,
-
-        `Quarto date confirmado no *{local}*, *{data}* às *{horario}*. Tipo Flamengo e Fluminense: pode até parecer confusão, mas no fundo, tá tudo sincronizado. Um clássico meio estranho, mas que funciona.`,
-
-        `Flamengo e Fluminense já mostraram que rivalidade também pode render bons jogos. A gente já tá no quarto. *{local}*, *{data}* às *{horario}*. Ainda sem bandeirinha levantando impedimento.`,
-
-        `Se até Fla e Flu já protagonizaram momentos épicos lado a lado, por que não a gente? Quarto date confirmado: *{local}*, *{data}* às *{horario}*. Tá quase virando tradição semanal.`
-    ];
+        `Fla x Flu já rolou mais de 400 vezes — e ainda continuam se encontrando. Coincidência? Acho que não. Nosso quarto date tá confirmado: *{local}*, *{data}* às *{horario}*. Tá virando clássico com continuidade.`,
+      
+        `Se Flamengo e Fluminense conseguem dividir o mesmo estádio, por que não quatro rolês seguidos? Confirmado: *{local}*, *{data}* às *{horario}*.`,
+      
+        `Tem coisa que ninguém explica: Fla e Flu dando certo... e esse nosso 4º date também. Tá marcado: *{local}*, *{data}* às *{horario}*. Vai ver o segredo é leveza, bom humor e zero impedimento.`,
+      
+        `Nosso quarto date tá confirmado: *{local}*, *{data}* às *{horario}*. Tipo Fla-Flu: improvável pra alguns, inevitável pra gente.`,
+      
+        `Se até Fla-Flu rende jogão, imagina a gente? Já estamos no quarto date: *{local}*, *{data}* às *{horario}*. Fla-Flu pode ter VAR… mas entre a gente, não tem replay: cada momento é original.`,
+      
+        `Se Fla e Flu já viveram momentos épicos lado a lado, por que não a gente? Quarto date confirmado: *{local}*, *{data}* às *{horario}*. Tá quase virando tradição de fim de semana.`
+      ];
+      
 
     const frase = frasesFlaFluZoeiraRomanceLeve[Math.floor(Math.random() * frasesFlaFluZoeiraRomanceLeve.length)]
         .replace('{local}', local)
@@ -34,3 +35,4 @@ function typeWrite(elemento) {
 
     });
 }
+
