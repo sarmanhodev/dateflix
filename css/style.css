@@ -19,5 +19,40 @@ body {
     backdrop-filter: blur(12.1px);
     -webkit-backdrop-filter: blur(12.1px);
     border: 1px solid rgba(255, 255, 255, 0.36);
-    padding: 5px 5px;
+
+    padding: 1rem;
+    max-width: 450px;
+    width: 100%;
+    margin: auto;
+
+    box-sizing: border-box;
+}
+
+
+
+.titulo-principal:after,
+.sub_titulo:after {
+    content: '|';
+    margin-left: 5px;
+    opacity: 1;
+    animation: pisca .5s infinite;
+}
+
+/* Animação aplicada ao content referente a classe *.titulo-principal* resultando num efeito de cursor piscando. */
+
+@keyframes pisca {
+    0%,
+    100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
+
+
+@media (min-width: 768px) {
+    .glass-card {
+        padding: 2rem;
+    }
 }
