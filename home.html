@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dateflix - Versão Exclusiva</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/moment.min.js"></script>
+    <script src="./js/mFunctions.js"></script>
+    <script src="./js/mScripts.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</head>
+
+<body>
+
+    <div class="container-fluid">
+        <h1 class="display-4 text-light">Dateflix – Versão Exclusiva</h1>
+        <p class="lead text-light">3 episódios, sorrisos sem fim... e um spoiler: o próximo capítulo pode ser o melhor de todos. ❤️
+        </p>
+
+
+        <div data-aos="fade-right" data-aos-duration="1000" class="glass-card">
+            <div class="d-flex flex-wrap gap-3 justify-content-center">
+                <img src="./img/date1.png" alt="date1" class="img-fluid imgDate">
+                <span class="text-light text-start">
+                    <b>Date 1:</b> 14/06/2025 <br>
+                    Um café em Santa Teresa, o sol se despedindo no Parque das Ruínas… e o nosso primeiro beijo, como
+                    cena de filme que eu nunca quero esquecer.
+                </span>
+            </div>
+        </div>
+
+        <div data-aos="fade-left" data-aos-duration="1000" class="mt-5 glass-card">
+            <div class="d-flex flex-wrap gap-3 justify-content-center">
+                <img src="./img/date2.png" alt="date1" class="img-fluid imgDate">
+                <span class="text-light">
+                    <b>Date 2:</b> 19/06/2025 <br>
+                    Um café em Santa Teresa, o sol se despedindo no Parque das Ruínas… e o nosso primeiro beijo, como
+                    cena de filme que eu nunca quero esquecer.
+                </span>
+            </div>
+        </div>
+
+        <div data-aos="fade-up" data-aos-duration="1000" class="mt-5 glass-card">
+            <div class="d-flex flex-wrap gap-3 justify-content-center">
+                <img src="./img/date3.png" alt="date1" class="img-fluid imgDate">
+                <span class="text-light">
+                    <b>Date 3:</b> 29/06/2025 <br>
+                    Te acompanhei no jogo do seu time, corremos pro show que não aconteceu… e ainda assim, tudo terminou
+                    perfeito: com café, cheesecake e mais uma memória linda ao teu lado.
+                    Mais uma prova de que tudo com você vale a pena.
+                </span>
+            </div>
+        </div>
+
+        <div data-aos="flip-down" data-aos-duration="2000" class="mt-5 glass-card">
+            <div class="d-flex justify-content-center align-items-center" style="height: 100vh;">
+
+                <div id="carouselExample" class="carousel slide" style="max-width: 900px;">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                            class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                            aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                            aria-label="Slide 3"></button>
+                    </div>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="./img/paisagem1.jpg" class="d-block w-100 imgModal" alt="..."
+                                title="Paisagem fim de tarde">
+
+                            <div class="carousel-caption d-md-block">
+                                <h5>Paisagem fim de tarde</h5>
+                                <p>Uma bela paisagem de fim de tarde.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./img/paisagem2.jpg" class="d-block w-100 imgModal" alt="..."
+                                title="Paisagem Planetas">
+                            <div class="carousel-caption d-md-block">
+                                <h5>Paisagem Planetas</h5>
+                                <p>Uma bela paisagem de Planetas.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./img/paisagem3.jpg" class="d-block w-100 imgModal" alt="..."
+                                title="Paisagem amazônica">
+                            <div class="carousel-caption d-md-block">
+                                <h5>Paisagem amazônica</h5>
+                                <p>Uma bela paisagem amazônica.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- <div class="d-flex justify-content-center align-items-center" style="height: 100vh;">
+
+        <div id="carouselExample" class="carousel slide" style="max-width: 900px;">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="./img/paisagem1.jpg" class="d-block w-100" alt="..." title="Paisagem fim de tarde">
+                    <div class="carousel-caption d-md-block">
+                        <h5>Paisagem fim de tarde</h5>
+                        <p>Uma bela paisagem de fim de tarde.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="./img/paisagem2.jpg" class="d-block w-100" alt="..." title="Paisagem Planetas">
+                    <div class="carousel-caption d-md-block">
+                        <h5>Paisagem Planetas</h5>
+                        <p>Uma bela paisagem de Planetas.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="./img/paisagem3.jpg" class="d-block w-100" alt="..." title="Paisagem amazônica">
+                    <div class="carousel-caption d-md-block">
+                        <h5>Paisagem amazônica</h5>
+                        <p>Uma bela paisagem amazônica.</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+    </div> -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
