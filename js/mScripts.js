@@ -7,7 +7,7 @@ $(function () {
     typeWrite(titulo);
     typeWrite(sub_titulo);
 
-    $("body").on("click", ".imgModal", function () {
+    $("body").on("click touchstart", ".imgModal", function () {
         var imagemPaisagem = $(this).attr('title');
 
         var larguraTela = $(window).width();
