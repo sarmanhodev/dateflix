@@ -157,6 +157,27 @@ $(function () {
         });
     });
 
-
+    $('.imgDate').css('cursor', 'pointer').on('click', function() {
+        var url = $(this).attr('src');
+        $.alert({
+            type: 'green',
+            theme: 'dark',
+            icon: 'fa fa-warning',
+            title: '<b>Atenção!</b>',
+            content: 'Deseja fazer o download da imagem?',
+            buttons: {
+                Sim: {
+                    text: 'Sim',
+                    btnClass: 'btn-green',
+                    action: function(){
+                        download(url); // chama a função da biblioteca download.js
+                    }
+                },
+                Não: {
+                    text: "Não"
+                }
+            }
+        });
+      });
     
 });
