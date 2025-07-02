@@ -140,7 +140,7 @@ $(function () {
                             autoClose: 'enviarNotificacao|3000',
                             buttons: {
                                 enviarNotificacao: {
-                                    text: 'Enviar notificação',
+                                    text: 'Enviando notificação',
                                     btnClass: 'btn-green',
                                     action: function () {
                                         enviarMensagemWhatsApp(data, horario, destinoEscolhido)
@@ -156,4 +156,7 @@ $(function () {
             },
         });
     });
+
+
+    
 });
