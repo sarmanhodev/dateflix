@@ -157,27 +157,26 @@ $(function () {
         });
     });
 
-    $('.imgDate').css('cursor', 'pointer').on('click', function() {
-        var url = $(this).attr('src');
-        $.alert({
-            type: 'green',
-            theme: 'dark',
-            icon: 'fa fa-warning',
-            title: '<b>Atenção!</b>',
-            content: 'Deseja fazer o download da imagem?',
-            buttons: {
-                Sim: {
-                    text: 'Sim',
-                    btnClass: 'btn-green',
-                    action: function(){
-                        download(url); // chama a função da biblioteca download.js
-                    }
-                },
-                Não: {
-                    text: "Não"
-                }
-            }
+     $('.imgDate').on('click', function () {
+      const imageUrl = $(this).attr('src');
+      const filename = imageUrl.split('/').pop(); // nome do arquivo
+
+      fetch(imageUrl)
+        .then(response => response.blob())
+        .then(blob => {
+          const blobUrl = URL.createObjectURL(blob);
+          const a = document.createElement('a');
+          a.href = blobUrl;
+          a.download = filename;
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+          URL.revokeObjectURL(blobUrl);
+        })
+        .catch(error => {
+          alert('Erro ao baixar imagem: ' + error);
         });
-      });
+    });
+
     
 });
