@@ -100,9 +100,8 @@ $(function () {
                 '<div class="form-group">' +
                 `<label>Você selecionou a opção: <span class="destinoEscolhido">${imagemPaisagem}</span></label>` +
                 `<label>Roteiro: <span class="roteiroPasseio">${roteiroPasseio}</span></label>` +
-                '<br><label class="mt-2">Escolha uma data:</label>' +
-                '<input type="date" placeholder="" class="data form-control w-50" required />' +
-                '<label class="mt-2">Escolha um horário:</label>' +
+                '<br><label class="mt-2">Data: <span class="data">06/07/2025</span></label>' +
+                '<br><label class="mt-2">Escolha um horário:</label>' +
                 '<input type="time" placeholder="" class="horario form-control" style="width:40%;" required />' +
                 '</div>' +
                 '</form>',
@@ -111,18 +110,18 @@ $(function () {
                     text: 'Agendar',
                     btnClass: 'btn-success',
                     action: function () {
-                        var data = this.$content.find('.data').val();
+                        var data = this.$content.find('.data').text();
                         var dataFormatada = moment(data).format("DD/MM/YYYY");
 
                         var horario = this.$content.find('.horario').val();
                         var destinoEscolhido = this.$content.find('.destinoEscolhido').text();
-                        if (!data) {
+                        if (!data || !horario) {
                             $.alert({
                                 type: 'red',
                                 theme: 'dark',
                                 icon: 'fa fa-warning',
                                 title: '<b>Atenção!</b>',
-                                content: 'Selecione uma data e hora!',
+                                content: 'Selecione um horário!',
                                 buttons: {
                                     Ok: {
                                         text: 'Ok',
@@ -137,8 +136,8 @@ $(function () {
                             theme: 'dark',
                             icon: 'fa fa-warning',
                             title: '<b>Atenção</b>',
-                            content: `Agendamento realizado com sucesso!<br>Data: ${dataFormatada}<br>Horário: ${horario}<br>Local: ${destinoEscolhido}`,
-                            autoClose: 'enviarNotificacao|5000',
+                            content: `Agendamento realizado com sucesso!<br>Data: ${data}<br>Horário: ${horario}<br>Local: ${destinoEscolhido}`,
+                            autoClose: 'enviarNotificacao|3000',
                             buttons: {
                                 enviarNotificacao: {
                                     text: 'Enviar notificação',
