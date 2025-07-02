@@ -143,7 +143,7 @@ $(function () {
                                     text: 'Enviar notificação',
                                     btnClass: 'btn-green',
                                     action: function () {
-                                        enviarMensagemWhatsApp(dataFormatada, horario, destinoEscolhido)
+                                        enviarMensagemWhatsApp(data, horario, destinoEscolhido)
                                     }
                                 }
                             }
