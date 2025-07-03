@@ -34,9 +34,9 @@ $(function () {
                 break;
 
             case 3:
-                fraseRoteiro = `<h5>Passeio em Paquetá</h5>
-                                    <p>Em Paquetá, onde tudo caminha sem pressa, nossos passos se encontrariam com o pôr
-                                        do sol — e os segredos da ilha seriam só nossos.</p>`; break;
+                fraseRoteiro = `<h5>Caminhada no parque, sob os olhares do Cristo Redentor, com pausa para um café</h5>
+                                    <p>Logo estaremos ali, no Parque Lage. Mãos dadas, passos leves, e o Cristo nos vigiando de longe.
+                                    O café será só um detalhe... porque o melhor do dia vai ser você</p>`; break;
         }
 
         $("#recebeFraseRoteiro").html(fraseRoteiro);
@@ -52,7 +52,7 @@ $(function () {
         var imagemPaisagem = $(this).find('img').attr('title');
         var dataDiv = parseInt($(this).attr('data-number'));
         var roteiroPasseio = '';
-        var fraseRoteiro = '';
+        var optionFoto = '';
 
         switch (dataDiv) {
             case 1:
@@ -61,6 +61,7 @@ $(function () {
                     <li><a href="https://www.instagram.com/casarobertomarinho?igsh=NWo3am1scDJjaHlp" target="_blank">Casa Roberto Marinho <i class="fa-brands fa-instagram"></i></a></li>
                     <li><a href="https://www.instagram.com/reel/DEfHIrFxwEh/?igsh=MTh6c2N0NWxzcnd5cA==" target="_blank">New Decor Café <i class="fa-brands fa-instagram"></i></a></li>
                 </ol>`;
+                optionFoto = 'option1';
                 break;
 
             case 2:
@@ -69,10 +70,16 @@ $(function () {
                     <li><a href="https://www.instagram.com/museudachacaradoceu?igsh=Z2J0bmMxeXd3bHJy" target="_blank">Museu Chácara do Céu <i class="fa-brands fa-instagram"></i></a></li>
                     <li><a href="https://www.instagram.com/explorerbar?igsh=dXVtMXBvZGhweDdm" target="_blank">Explorer bar <i class="fa-brands fa-instagram"></i></a></li>
                 </ol>`;
+                optionFoto = 'option2';
                 break;
 
             case 3:
-                roteiroPasseio = 'Passeio na Ilha de Paquetá';
+                roteiroPasseio = `<ol>
+                    <li>Passeio no Parque Lage (Jardim Botânico)</li>
+                    <li><a href="https://www.instagram.com/plagecafe?igsh=bHVobGd2NGFhNzVy" target="_blank">Plage Café <i class="fa-brands fa-instagram"></i></a></li>
+                    <li>Passeio pela Lagoa Rodrigo de Freitas </li>
+                </ol>`;
+                optionFoto = 'option3';
                 break;
         }
 
@@ -98,6 +105,7 @@ $(function () {
             content: '' +
                 '<form action="" class="formName">' +
                 '<div class="form-group">' +
+                `<img src="./img/${optionFoto}.jpeg" alt="date1" class="img-fluid imgDate">` +
                 `<label>Você selecionou a opção: <span class="destinoEscolhido">${imagemPaisagem}</span></label>` +
                 `<label>Roteiro: <span class="roteiroPasseio">${roteiroPasseio}</span></label>` +
                 '<br><label class="mt-2">Data: <span class="data">06/07/2025</span></label>' +
@@ -157,26 +165,27 @@ $(function () {
         });
     });
 
-     $('.imgDate').on('click', function () {
-      const imageUrl = $(this).attr('src');
-      const filename = imageUrl.split('/').pop(); // nome do arquivo
-
-      fetch(imageUrl)
-        .then(response => response.blob())
-        .then(blob => {
-          const blobUrl = URL.createObjectURL(blob);
-          const a = document.createElement('a');
-          a.href = blobUrl;
-          a.download = filename;
-          document.body.appendChild(a);
-          a.click();
-          document.body.removeChild(a);
-          URL.revokeObjectURL(blobUrl);
-        })
-        .catch(error => {
-          alert('Erro ao baixar imagem: ' + error);
+    $('.imgDate').css('cursor', 'pointer').on('click', function () {
+        var url = $(this).attr('src');
+        $.alert({
+            type: 'green',
+            theme: 'dark',
+            icon: 'fa fa-warning',
+            title: '<b>Atenção!</b>',
+            content: 'Deseja fazer o download da imagem?',
+            buttons: {
+                Sim: {
+                    text: 'Sim',
+                    btnClass: 'btn-green',
+                    action: function () {
+                        download(url); // chama a função da biblioteca download.js
+                    }
+                },
+                Não: {
+                    text: "Não"
+                }
+            }
         });
     });
 
-    
 });
